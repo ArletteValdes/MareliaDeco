@@ -1,0 +1,189 @@
+* {
+    font-family: 'Karla', sans-serif;
+    padding: 0%;
+    margin: 0%;
+}
+
+
+.containergrid {
+    display: grid;
+    grid-template-columns: auto;
+    align-content: center;
+    grid-template-areas:
+        "navbar navbar-expand-lg"
+        "section"
+        "carditem"
+        "footer";
+    gap: 5px;
+}
+
+menu {
+    grid-area: navbar navbar-expand-lg;
+    background: #FDEAD4;
+}
+
+.navbar-brand img {
+    height: 50px;
+}
+
+
+.btn-secondary {
+    background: white;
+    color: #d16666;
+    padding: 5px 100px;
+    border-style: none;
+}
+
+
+
+.producto {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #FDEAD4;
+
+}
+
+
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.size {
+    background-color: #FDEAD4;
+    padding: 10px 100px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: grey;
+
+
+}
+
+
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FDEAD4;
+    padding: 10px;
+}
+
+footer a {
+    text-decoration-line: none;
+    color: #d16666;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+
+/*mobile first*/
+
+@media screen and (max-width: 667px) {
+
+    containergrid {
+        display: grid;
+        grid-auto-rows: 100px, auto;
+        grid-template-areas:
+            "menu"
+            "producto"
+            "pages"
+            "footer";
+    }
+
+    .pages {
+        grid-area: pages;
+        display: grid;
+        grid-row: auto;
+        justify-content: center;
+    }
+}
+
+
+
+
+/* PC view */
+
+@media screen and (min-width: 668px) {
+
+    containergrid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 100px, auto;
+        grid-template-areas:
+            "menu section section section section section"
+            "menu producto producto producto producto producto"
+            "menu producto producto producto producto producto"
+            "footer pages pages pages pages pages";
+
+    }
+
+    menu {
+        grid-area: menu;
+        align-content: center;
+        width: 100%;
+        height: 95vh;
+    }
+
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        padding-top: 100px;
+
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column !important;
+
+    }
+
+    section {
+        grid-area: section;
+        height: 100%;
+        width: 100%;
+
+    }
+
+    .producto {
+        grid-area: producto;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+
+    .pages {
+        grid-area: pages;
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+        justify-content: center;
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: #FDEAD4;
+        height: 100%;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
