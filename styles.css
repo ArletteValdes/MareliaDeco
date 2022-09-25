@@ -103,8 +103,24 @@ footer a {
         grid-template-areas:
             "menu"
             "producto"
+            "producto2"
             "pages"
             "footer";
+    }
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+       align-items: center;
+       gap: 5px;
+     }
+
+
+    .card img{
+        width: 250px;
+        padding: 10px;
+       
     }
 
     .pages {
@@ -113,6 +129,15 @@ footer a {
         grid-row: auto;
         justify-content: center;
     }
+
+    .producto2{
+        display: grid;
+        grid-template-columns: auto;
+        grid-area: producto2;
+        display:none;
+    }
+
+
 }
 
 
@@ -128,8 +153,8 @@ footer a {
         grid-auto-rows: 100px, auto;
         grid-template-areas:
             "menu section section section section section"
-            "menu producto producto producto producto producto"
-            "menu producto producto producto producto producto"
+            "menu producto producto2 producto2 producto2 producto2"
+            "menu producto producto2 producto2 producto2 producto2"
             "footer pages pages pages pages pages";
 
     }
@@ -165,7 +190,18 @@ footer a {
     .producto {
         grid-area: producto;
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto;
+    }
+
+    .producto2{
+        grid-area: producto2;
+        display: grid;
+        grid-template-columns: auto;
+       
+    }
+
+    .producto2 img{
+        width:250px;
     }
 
     .pages {
